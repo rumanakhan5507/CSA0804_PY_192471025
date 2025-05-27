@@ -1,0 +1,191 @@
+#Problem 1
+sentence = input("Enter a sentence: ")
+word_count = len(sentence.split())
+print("Number of words in the sentence:", word_count)
+
+
+#Problem 2
+a=input("Enter a string=")
+for i in a :
+    print(i,"occurs", a.count(i), "times")
+
+
+#Problem 3
+s = input("Enter a string: ")
+max_len = 0
+start = 0
+
+for i in range(len(s)):
+    for j in range(i, len(s)):
+        substr = s[i:j+1]
+        if substr == substr[::-1] and len(substr) > max_len:
+            max_len = len(substr)
+            start = i
+
+print("Longest palindrome:", s[start:start+max_len])
+
+
+#Problem 4
+a=input("Enter an email=")
+if "@gmail.com" in a :
+    print(a,"is a valid email")
+else:
+    print(a,"is not a valid email")
+
+
+#Problem 5
+list1_input = input("Enter the first list of numbers (space-separated): ")
+list1 = list(map(int, list1_input.split()))
+list2_input = input("Enter the second list of numbers (space-separated): ")
+list2 = list(map(int, list2_input.split()))
+common = []
+for item in list1:
+    if item in list2 and item not in common:
+        common.append(item)
+print("Common elements:", common)
+
+
+#Problem 6
+a=list(input("Enter a string="))
+b=list(input("Enter a string="))
+print(set(a) &set(b))
+
+
+#Problem 7
+a=input("Enter a string=")
+print("String without white spaces= ",a.replace(" ",""))
+
+
+#Problem 8
+text = input("Enter a string: ")
+words = text.split()
+unique_words = []
+for word in words:
+    if word not in unique_words:
+        unique_words.append(word)
+frequencies = []
+for word in unique_words:
+    frequencies.append(words.count(word))
+first_max = second_max = -1
+for freq in frequencies:
+    if freq > first_max:
+        second_max = first_max
+        first_max = freq
+    elif freq > second_max and freq != first_max:
+        second_max = freq
+found = False
+for i in range(len(unique_words)):
+    if frequencies[i] == second_max:
+        print(f"Second most frequent word: '{unique_words[i]}' (occurs {second_max} times)")
+        found = True
+        break
+if not found:
+    print("No second most frequent word found.")
+
+
+
+#Problem 9
+a=input("Enter a string=")
+b=input("Enter a string=")
+if sorted(a)==sorted(b):
+    print("it is an anagram")
+else:
+    print("not an anagram")
+
+
+#Problem 10
+a = input("Enter a string: ")
+b = input("Give a string to change: ")
+seen = []
+if b in a:
+    a = a.replace(b, "paul", 1)  # Replace only the first occurrence
+    print("Modified string:", a)
+else:
+    print("No repeating string found.")
+
+
+#Problem 11
+text = input("Enter a string: ")
+old_word = input("Enter the word to replace: ")
+new_word = input("Enter the new word: ")
+modified_text = text.replace(old_word, new_word)
+print("Modified string:", modified_text)
+
+
+#Problem 12
+text = input("Enter a string: ")
+words = text.split()
+unique_words = []
+for word in words:
+    if word not in unique_words:
+        unique_words.append(word)
+max_count = 0
+most_frequent = ""
+    count = words.count(word)
+    if count > max_count:
+        max_count = count
+        most_frequent = word
+print(f"Most frequent word: '{most_frequent}' (occurs {max_count} times)")
+
+
+#Problem 13
+a=input("Enter a string=")
+digit=False
+for i in a :
+    i.isdigit()
+    digit=True
+    break
+if digit:
+    print(a, "has digits" )
+else:
+    print(a,"does not have digits")
+
+
+#Problem 14
+text = input("Enter a string: ")
+vowels = "aeiouAEIOU"
+result = ""
+for char in text:
+    if char not in vowels:
+        result += char
+print("String without vowels:", result)
+
+
+#Problem 15
+a=input("Enter a string=")
+b=input("Enter a string=")
+c=a+b
+print(c)
+
+
+#Problem 16
+text = input("Enter a string: ")
+words = text.split()
+longest_length = max(len(word) for word in words)
+print("Length of the longest word:", longest_length)
+
+
+#Problem 17
+text = input("Enter a string: ")
+texts=text.upper()
+print(texts)
+
+
+#Problem 18
+text = input("Enter a string: ")
+if text==text[::-1]:
+    print("It is a Palindrome")
+else:
+    print("it is not a palindrome")
+
+
+#Problem 19
+text = input("Enter a string: ")
+a=text[::-1]
+print(a)
+
+
+#Problem 20
+text = input("Enter a string: ")
+for i in text:
+    print(i,"occurs",text.count(i),"times")
